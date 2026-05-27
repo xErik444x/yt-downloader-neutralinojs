@@ -1,4 +1,5 @@
 # YT Downloader
+<img width="515" height="637" alt="screenshot" src="https://github.com/user-attachments/assets/a8b77045-e331-4241-ab4e-154af4598aa9" />
 
 A lightweight, portable desktop application for downloading YouTube videos and audio. Built with Neutralinojs and vanilla web technologies. No frameworks, no bloat, no installation required.
 
