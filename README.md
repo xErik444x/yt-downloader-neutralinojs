@@ -14,7 +14,6 @@ The application runs as a native desktop window with a custom frameless UI. It a
 - **Frameless window** - custom title bar with native window controls (minimize, maximize, close) and drag-to-move support.
 - **Fully portable** - single executable, no system installation or registry changes.
 
-
 ## Download
 
 Grab the latest release from the [Releases](../../releases) page.
@@ -34,7 +33,7 @@ On first launch, the app will download `yt-dlp` and `ffmpeg` into a local `.deps
 
 ```bash
 # Clone the repository
-git clone https://github.com/USERNAME/yt-downloader-neutralinojs.git
+git clone https://github.com/xErik444x/yt-downloader-neutralinojs.git
 cd yt-downloader-neutralinojs
 
 # Install the Neutralino CLI globally
@@ -88,12 +87,14 @@ yt-downloader-neutralinojs/
 
 ## Tech Stack
 
-| Component | Technology |
-|-----------|------------|
-| Runtime | [Neutralinojs](https://neutralino.js.org/) |
+
+| Component  | Technology                                 |
+| ---------- | ------------------------------------------ |
+| Runtime    | [Neutralinojs](https://neutralino.js.org/) |
 | Downloader | [yt-dlp](https://github.com/yt-dlp/yt-dlp) |
-| Converter | [ffmpeg](https://ffmpeg.org/) |
-| UI | Vanilla HTML / CSS / JS |
+| Converter  | [ffmpeg](https://ffmpeg.org/)              |
+| UI         | Vanilla HTML / CSS / JS                    |
+
 
 ## Supported Sites
 
