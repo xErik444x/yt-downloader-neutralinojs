@@ -1,0 +1,39 @@
+# Dependencies (auto-downloaded by app)
+/.deps
+
+# Neutralinojs binaries
+/bin
+/dist
+
+# Neutralinojs runtime files
+.storage
+.tmp
+*.log
+*.neustorage
+
+# Neutralino client (may appear at root after update)
+/neutralino.js
+
+# AI agent files
+AGENTS.md
+SKILL.md
+
+# Node
+node_modules
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors/IDEs
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Build artifacts
+*.exe
+*.app
+*.dmg

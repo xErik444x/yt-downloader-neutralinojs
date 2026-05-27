@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YT Downloader</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div id="setupOverlay" class="setup-overlay" role="dialog" aria-modal="true" aria-labelledby="setupTitle" aria-describedby="setupStatus">
+    <div class="setup-content">
+      <div class="spinner" aria-hidden="true"></div>
+      <h2 id="setupTitle">Setting up...</h2>
+      <p id="setupStatus">Checking dependencies</p>
+      <div class="setup-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Setup progress">
+        <div id="setupProgressFill" class="setup-progress-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <header class="titlebar" id="titlebar" role="banner">
+    <div class="titlebar-drag" id="titlebarDrag">
+      <div class="titlebar-brand">
+        <svg class="titlebar-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="currentColor"/></svg>
+        <span class="titlebar-name">YT Downloader</span>
+      </div>
+      <span id="status" class="status" aria-live="polite"></span>
+    </div>
+    <div class="titlebar-controls" role="toolbar" aria-label="Window controls">
+      <button id="minimizeBtn" class="win-btn" aria-label="Minimize window" title="Minimize">
+        <svg width="12" height="12" viewBox="0 0 12 12"><rect y="5" width="12" height="2" rx="1" fill="currentColor"/></svg>
+      </button>
+      <button id="maximizeBtn" class="win-btn" aria-label="Maximize window" title="Maximize">
+        <svg width="12" height="12" viewBox="0 0 12 12"><rect x="1" y="1" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+      </button>
+      <button id="closeBtn" class="win-btn win-close" aria-label="Close window" title="Close">
+        <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 2l8 8M10 2l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="app" role="main" aria-label="Main content">
+    <section class="input-section" aria-label="URL input">
+      <div class="url-input-group">
+        <input type="text" id="urlInput" placeholder="Paste a YouTube URL (video or playlist)" autocomplete="off" spellcheck="false" aria-label="YouTube URL">
+        <button id="fetchBtn" class="btn btn-primary" aria-label="Fetch video information">Fetch</button>
+      </div>
+    </section>
+
+    <section class="folder-section" aria-label="Download folder">
+      <div class="folder-display">
+        <svg class="folder-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span id="folderPath" class="folder-path">Select a download folder</span>
+      </div>
+      <button id="changeFolderBtn" class="btn btn-ghost" aria-label="Change download folder">Change</button>
+    </section>
+
+    <section id="videoInfo" class="info-section hidden" aria-label="Video information">
+      <div class="info-grid">
+        <div class="thumbnail-container">
+          <img id="thumbnail" src="" alt="Video thumbnail">
+        </div>
+        <div class="details">
+          <h2 id="title" class="title"></h2>
+          <div class="meta">
+            <span id="duration" class="meta-item"></span>
+            <span id="type" class="meta-item"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="options">
+        <div class="option-group">
+          <label for="formatSelect">Format</label>
+          <select id="formatSelect" aria-label="Select video format"></select>
+        </div>
+        <div class="option-group">
+          <label class="checkbox-label" for="audioOnly" title="Download audio only, converted to MP3">
+            <input type="checkbox" id="audioOnly">
+            <span>Audio only (MP3)</span>
+          </label>
+        </div>
+      </div>
+
+      <button id="downloadBtn" class="btn btn-accent" aria-label="Start download">Download</button>
+    </section>
+
+    <section id="progressSection" class="progress-section hidden" aria-label="Download progress" aria-live="polite">
+      <div class="progress-info">
+        <span id="progressText">Downloading...</span>
+        <span id="progressPercent">0%</span>
+      </div>
+      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progress bar">
+        <div id="progressFill" class="progress-fill"></div>
+      </div>
+    </section>
+
+  </main>
+  <script>
+    let ele = document.querySelector("body")
+    ele.addEventListener('contextmenu', (ev)=>{
+      console.log("Right click disabled");
+      ev.preventDefault(); // this will prevent browser default behavior 
+    });
+   </script>
+  <script src="/js/neutralino.js"></script>
+  <script src="/js/main.js"></script>
+  
+</body>
+</html>
