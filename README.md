@@ -56,11 +56,11 @@ neu build
 ## Usage
 
 1. Paste a YouTube URL (single video or playlist) into the input field.
-2. Click **Obtener** to fetch video information.
+2. Click **Fetch** to get video information.
 3. Select the desired format and quality from the dropdown.
-4. Toggle **Solo audio (MP3)** if you only need the audio track.
-5. Set your download folder using the **Cambiar** button.
-6. Click **Descargar** to start. Progress appears in real time.
+4. Toggle **Audio only (MP3)** if you only need the audio track.
+5. Set your download folder using the **Change** button.
+6. Click **Download** to start. Progress appears in real time.
 
 Your download folder preference is saved automatically between sessions.
 
